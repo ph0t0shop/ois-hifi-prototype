@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'CharisSIL';
+    src: url('../fonts/CharisSIL.eot');
+    src: url('../fonts/CharisSIL.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/CharisSIL.woff2') format('woff2'),
+    url('../fonts/CharisSIL.woff') format('woff'),
+    url('../fonts/CharisSIL.ttf')  format('truetype'),
+    url('../fonts/CharisSIL.svg#fce281fce3710bdef0bac6e899de067e') format('svg');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'CharisSIL';
+    src: url('../fonts/CharisSIL-Bold.eot');
+    src: url('../fonts/CharisSIL-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/CharisSIL-Bold.woff2') format('woff2'),
+    url('../fonts/CharisSIL-Bold.woff') format('woff'),
+    url('../fonts/CharisSIL-Bold.ttf')  format('truetype'),
+    url('../fonts/CharisSIL-Bold.svg#fce281fce3710bdef0bac6e899de067e') format('svg');
+    font-style: normal;
+    font-weight: 700;
+}
+
+html {
+    --mdc-typography-font-family: "CharisSIL", serif;
+    --mdc-theme-primary: rgb(0, 32, 72) !important;
+    --mdc-theme-secondary: rgb(102, 121, 145) !important;
+    /* --mdc-theme-secondary: #ff4400 !important;  */
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+    color: rgb(0, 32, 72);
+}
+
+.header {
+    margin-top: 10vh;
+    text-align: center;
+    color: rgb(0, 32, 72);
+}
+
+.username,
+.password {
+    display: flex;
+    margin: 20px auto;
+    width: 30vw;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 30vw;
+    margin: auto;
+}
+  
+.button-container button {
+    width: 50%;
+    margin: 3px;
+}
+
+.forgot-pass {
+    width: 30vw;
+    margin: 10px auto;
+    display: flex;
+}
+
+.home-btn {
+    top: 0px;
+    left: 0px;
+    margin: 20px;
+    position: fixed;
+}
