@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- <link rel="preload" href="fonts/CharisSIL-Bold.woff2" as="font" type="font/woff2" crossorigin="">
+  <link rel="preload" href="fonts/CharisSIL.woff2" as="font" type="font/woff2" crossorigin=""> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body class="mdc-typography">
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+        <section class="header">
+            <button class="mdc-fab home-btn" aria-label="Home" disabled>
+                <div class="mdc-fab__ripple"></div>
+                <span class="mdc-fab__icon material-icons">home</span>
+            </button>
+            <h1 class="mdc-typography--headline3">Entangled Histories</h1>
+            <button class="mdc-button mdc-menu-surface--anchor mdc-button--outlined account-btn">
+                <span class="mdc-button__ripple"></span>
+                <i class="material-icons mdc-button__icon" aria-hidden="true">account_circle</i>
+                <span class="mdc-button__label">Account</span>
+                <div class="mdc-menu mdc-menu-surface">
+                    <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
+                        <li class="mdc-list-item" role="menuitem">
+                            <span class="mdc-list-item__ripple"></span>
+                            <span class="mdc-list-item__text">Inloggen</span>
+                        </li>
+                        <li class="mdc-list-item" role="menuitem">
+                            <span class="mdc-list-item__ripple"></span>
+                            <span class="mdc-list-item__text">Aanmelden</span>
+                        </li>
+                    </ul>
+                </div>
+            </button>
+        </section>
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section toolbar-section mdc-top-app-bar__action-item" role="toolbar">
+                <div class="mdc-select mdc-select--outlined mdc-select--with-leading-icon location-select">
+                    <div class="mdc-select__anchor" aria-labelledby="outlined-select-label">
+                        <span class="mdc-notched-outline">
+                            <span class="mdc-notched-outline__leading"></span>
+                            <span class="mdc-notched-outline__notch">
+                                <span id="outlined-select-label" class="mdc-floating-label">Locatie</span>
+                            </span>
+                            <span class="mdc-notched-outline__trailing"></span>
+                        </span>
+                        <i class="material-icons mdc-select__icon mdc-select__icon--leading"
+                        tabindex="0" role="button">room</i>
+                        <span class="mdc-select__selected-text-container">
+                            <span id="demo-selected-text" class="mdc-select__selected-text"></span>
+                        </span>
+                        <span class="mdc-select__dropdown-icon">
+                            <svg class="mdc-select__dropdown-icon-graphic" viewBox="7 10 10 5" focusable="false">
+                                <polygon class="mdc-select__dropdown-icon-inactive" stroke="none" fill-rule="evenodd"
+                                    points="7 10 12 15 17 10">
+                                </polygon>
+                                <polygon class="mdc-select__dropdown-icon-active" stroke="none" fill-rule="evenodd"
+                                    points="7 15 12 10 17 15">
+                                </polygon>
+                            </svg>
+                        </span>
+                    </div>
+
+                    <!-- Other elements from the select remain. -->
+                    <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
+                        <ul class="mdc-list" role="listbox" aria-label="Food picker listbox">
+                            <li class="mdc-list-item mdc-list-item--selected" aria-selected="true" data-value=""
+                                role="option">
+                                <span class="mdc-list-item__ripple"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mdc-select mdc-select--with-leading-icon mdc-select--outlined onderwerp-select">
+                    <div class="mdc-select__anchor" aria-labelledby="outlined-select-label">
+                        <span class="mdc-notched-outline">
+                            <span class="mdc-notched-outline__leading"></span>
+                            <span class="mdc-notched-outline__notch">
+                                <span id="outlined-select-label" class="mdc-floating-label">Onderwerp</span>
+                            </span>
+                            <span class="mdc-notched-outline__trailing"></span>
+                        </span>
+                        <i class="material-icons mdc-select__icon mdc-select__icon--leading"
+                        tabindex="0" role="button">subject</i>
+                        <span class="mdc-select__selected-text-container">
+                            <span id="demo-selected-text" class="mdc-select__selected-text"></span>
+                        </span>
+                        <span class="mdc-select__dropdown-icon">
+                            <svg class="mdc-select__dropdown-icon-graphic" viewBox="7 10 10 5" focusable="false">
+                                <polygon class="mdc-select__dropdown-icon-inactive" stroke="none" fill-rule="evenodd"
+                                    points="7 10 12 15 17 10">
+                                </polygon>
+                                <polygon class="mdc-select__dropdown-icon-active" stroke="none" fill-rule="evenodd"
+                                    points="7 15 12 10 17 15">
+                                </polygon>
+                            </svg>
+                        </span>
+                    </div>
+
+                    <!-- Other elements from the select remain. -->
+                    <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
+                        <ul class="mdc-list" role="listbox" aria-label="Food picker listbox">
+                            <li class="mdc-list-item mdc-list-item--selected" aria-selected="true" data-value=""
+                                role="option">
+                                <span class="mdc-list-item__ripple"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <label class="mdc-text-field mdc-text-field--with-leading-icon mdc-text-field--outlined start-date mdc-top-app-bar__action-item">
+                    <span class="mdc-notched-outline">
+                        <span class="mdc-notched-outline__leading"></span>
+                        <span class="mdc-notched-outline__notch">
+                            <span class="mdc-floating-label" id="start-date-label">Vanaf</span>
+                        </span>
+                        <span class="mdc-notched-outline__trailing"></span>
+                    </span>
+                    <i class="material-icons mdc-text-field__icon mdc-text-field__icon--leading"
+                        tabindex="0" role="button">event</i>
+                    <input type="text" class="mdc-text-field__input" aria-labelledby="start-date-label">
+                </label>
+                <label class="mdc-text-field mdc-text-field--with-leading-icon mdc-text-field--outlined end-date mdc-top-app-bar__action-item">
+                    <span class="mdc-notched-outline">
+                        <span class="mdc-notched-outline__leading"></span>
+                        <span class="mdc-notched-outline__notch">
+                            <span class="mdc-floating-label" id="end-date-label">Tot</span>
+                        </span>
+                        <span class="mdc-notched-outline__trailing"></span>
+                    </span>
+                    <i class="material-icons mdc-text-field__icon mdc-text-field__icon--leading"
+                        tabindex="0" role="button">event</i>
+                    <input type="text" class="mdc-text-field__input" aria-labelledby="end-date-label">
+                </label>
+                <label class="mdc-text-field mdc-text-field--with-leading-icon mdc-text-field--outlined search-bar mdc-top-app-bar__action-item">
+                    <span class="mdc-notched-outline">
+                        <span class="mdc-notched-outline__leading"></span>
+                        <span class="mdc-notched-outline__notch">
+                            <span class="mdc-floating-label" id="search-bar-label">Zoektermen...</span>
+                        </span>
+                        <span class="mdc-notched-outline__trailing"></span>
+                    </span>
+                    <i class="material-icons mdc-text-field__icon mdc-text-field__icon--leading"
+                        tabindex="0" role="button">search</i>
+                    <input type="text" class="mdc-text-field__input" aria-labelledby="search-bar-label">
+                </label>
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button search-btn" aria-label="Search">search</button>
+            </section>
+        </div>
+    </header>
+    <main>
+        <div class="kaart-container">
+            <img src="img/kaartnl.png" usemap="#image-map" class="nl-kaart">
+
+            <map name="image-map">
+                <area onclick="mapClick(this);" onmouseover="mapHover(this)" onmouseout="mapMouseOut(this);" alt="Friesland" title="Friesland"
+                    coords="240,29,215,41,209,47,208,57,206,74,206,85,205,91,202,97,207,101,213,101,219,102,224,99,229,103,235,103,240,106,246,107,252,104,257,104,263,104,269,97,276,93,282,92,288,91,286,79,286,70,278,59,279,37,273,35,262,34,268,31,270,24,265,20,255,23"
+                    shape="poly">
+                <area onclick="mapClick(this);" onmouseover="mapHover(this)" onmouseout="mapMouseOut(this);" alt="Groningen" title="Groningen"
+                    coords="279,27,287,20,307,20,314,17,327,20,325,25,330,28,329,33,344,37,332,46,345,47,349,54,343,58,336,72,319,57,310,58,298,50,291,55,290,64,286,67,278,58,279,40,285,34,292,30"
+                    shape="poly">
+                <area onclick="mapClick(this);" onmouseover="mapHover(this)" onmouseout="mapMouseOut(this);" alt="Drenthe" title="Drenthe"
+                    coords="271,96,277,105,272,113,276,120,286,121,294,127,303,125,306,121,314,128,320,125,344,126,346,100,337,72,318,57,308,57,298,49,292,54,291,64,284,66,288,71,286,80,291,87,288,92,278,90"
+                    shape="poly">
+                <area onclick="mapClick(this);" onmouseover="mapHover(this)" onmouseout="mapMouseOut(this);" alt="Overijssel" title="Overijssel"
+                    coords="240,107,256,121,254,126,259,129,246,134,243,137,246,142,253,150,263,146,267,152,266,158,266,167,272,179,276,184,297,182,302,187,314,190,321,198,327,198,332,191,339,191,344,182,346,174,341,151,338,156,330,157,316,151,313,140,320,137,316,134,317,127,314,128,304,121,302,126,293,126,286,121,275,119,272,112,278,106,270,96,263,103,253,102,247,106"
+                    shape="poly">
+                <area onclick="mapClick(this);" onmouseover="mapHover(this)" onmouseout="mapMouseOut(this);" alt="Holland" title="Holland"
+                    coords="151,82,138,151,101,216,111,226,123,228,131,227,137,228,136,231,116,231,95,225,92,232,76,240,104,259,112,262,118,259,130,259,133,265,142,266,153,263,162,263,169,262,175,263,182,261,192,257,198,254,173,240,183,235,183,226,186,217,178,215,170,218,163,220,164,226,156,222,164,212,168,206,158,206,171,203,171,198,163,198,163,193,157,184,159,180,166,188,170,181,174,174,184,178,188,183,183,187,177,186,176,191,187,191,195,191,196,184,202,179,197,175,183,167,173,166,179,159,181,146,175,133,182,130,191,131,197,120,196,113,189,114,183,111,172,114,164,106,153,104,152,94,158,90"
+                    shape="poly">
+                <area onclick="mapClick(this);" onmouseover="mapHover(this)" onmouseout="mapMouseOut(this);" alt="Utrecht" title="Utrecht"
+                    coords="203,179,210,180,212,187,215,194,217,202,223,202,222,211,229,222,220,223,213,220,202,223,196,219,191,220,188,215,183,214,164,219,159,215,168,207,159,206,172,202,171,196,163,197,158,194,165,191,158,184,160,180,167,187,173,174,183,176,187,182,183,186,177,186,179,191,191,193,197,183"
+                    shape="poly">
+                <area onclick="mapClick(this);" onmouseover="mapHover(this)" onmouseout="mapMouseOut(this);" alt="Gelderland" title="Gelderland"
+                    coords="245,146,252,152,262,149,265,161,267,177,272,186,283,185,297,184,302,190,312,191,319,201,322,206,317,206,316,210,322,212,326,219,323,226,318,231,312,229,307,232,301,234,295,234,292,239,286,239,277,236,270,239,263,239,257,248,255,260,249,253,242,253,237,250,231,250,228,244,220,241,213,241,200,248,199,255,174,241,184,236,183,230,194,229,202,231,204,223,213,220,220,222,229,223,222,210,224,201,218,203,210,181,217,181,222,172,236,162"
+                    shape="poly">
+                <area onclick="mapClick(this);" onmouseover="mapHover(this)" onmouseout="mapMouseOut(this);" alt="Staats-Brabant" title="Staats-Brabant"
+                    coords="232,248,230,254,236,257,237,263,246,275,240,279,230,275,227,268,221,258,221,250,217,243,210,241,202,243,202,250,197,254,183,262,174,262,167,265,160,263,152,264,147,268,134,265,129,261,129,258,123,258,120,263,123,268,117,267,106,269,106,281,110,288,107,295,110,300,121,297,120,286,132,285,137,289,133,293,146,293,152,284,160,286,161,292,155,293,157,296,166,294,172,298,178,288,182,295,179,302,183,307,186,313,194,320,195,325,200,326,208,307,220,310,220,317,225,320,231,310,240,301,251,297,248,286,248,277,256,278,260,277,265,280,268,279,263,274,259,266,250,253,243,253"
+                    shape="poly">
+                <area onclick="mapClick(this);" onmouseover="mapHover(this)" onmouseout="mapMouseOut(this);" alt="Zeeland" title="Zeeland"
+                    coords="67,249,62,253,63,268,54,266,40,277,46,282,51,287,67,295,77,296,82,289,89,291,94,295,101,298,106,292,95,286,103,278,100,271,95,261,83,253,79,258,79,251,73,249"
+                    shape="poly">
+            </map>
+            <svg viewbox="0 0 375 425" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" class="img-overlay">
+                <polygon id="mapPoly" points="" fill="red" fill-opacity="0.2" stroke="red"/>
+            </svg>
+            <svg viewbox="0 0 375 425" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" class="img-overlay">
+                <polygon id="selectedPoly" points="" fill="green" fill-opacity="0.4" stroke="green"/>
+            </svg>
+        </div>
+    </main>
+    <div class="mdc-dialog">
+        <div class="mdc-dialog__container">
+            <div class="mdc-dialog__surface" role="alertdialog" aria-modal="true" aria-labelledby="my-dialog-title"
+                aria-describedby="my-dialog-content">
+                <div class="mdc-dialog__content" id="my-dialog-content">
+                    Uw gebruikersnaam of wachtwoord is incorrect.
+                </div>
+                <div class="mdc-dialog__actions">
+                    <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="cancel">
+                        <div class="mdc-button__ripple"></div>
+                        <span class="mdc-button__label">OK</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="mdc-dialog__scrim"></div>
+    </div>
+    <script src="js/imageMapResizer.min.js"></script>
+    <script src="js/index.js" async></script>
+</body>

@@ -25,9 +25,9 @@ document.querySelector(".register-btn").addEventListener("click", function() {
 });
 
 document.querySelector(".login-btn").addEventListener("click", function(event) {
-    if (password.value !== "wachtwoord") {
+    if (password.value !== "wachtwoord") { // fake authentication
         event.preventDefault();
-        setTimeout(() => dialog.open(), 500);
+        setTimeout(() => dialog.open(), 400)
         return;
     }
     localStorage.setItem("username", username.value);

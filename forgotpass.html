@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- <link rel="preload" href="fonts/CharisSIL-Bold.woff2" as="font" type="font/woff2" crossorigin="">
+  <link rel="preload" href="fonts/CharisSIL.woff2" as="font" type="font/woff2" crossorigin=""> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="css/forgotpass.css">
+</head>
+
+<body class="mdc-typography">
+    <button class="mdc-fab home-btn" aria-label="Home">
+        <div class="mdc-fab__ripple"></div>
+        <span class="mdc-fab__icon material-icons">home</span>
+    </button>
+    <section class="header">
+        <h1 class="mdc-typography--headline3">Wachtwoord herstellen</h1>
+    </section>
+    <form action="#" onsubmit="return forgotPass();">
+        <label class="mdc-text-field mdc-text-field--outlined email">
+            <span class="mdc-notched-outline">
+                <span class="mdc-notched-outline__leading"></span>
+                <span class="mdc-notched-outline__notch">
+                    <span class="mdc-floating-label" id="username-label">E-mailadres</span>
+                </span>
+                <span class="mdc-notched-outline__trailing"></span>
+            </span>
+            <input type="email" class="mdc-text-field__input" aria-labelledby="username-label" required>
+        </label>
+        <div class="button-container">
+            <button type="button" class="mdc-button cancel back-btn">
+                <div class="mdc-button__ripple"></div>
+                <span class="mdc-button__label">
+                    Terug
+                </span>
+            </button>
+            <button class="mdc-button mdc-button--raised next request-btn">
+                <div class="mdc-button__ripple"></div>
+                <span class="mdc-button__label">
+                    Aanvragen
+                </span>
+            </button>
+        </div>
+    </form>
+    <div class="mdc-dialog">
+        <div class="mdc-dialog__container">
+            <div class="mdc-dialog__surface" role="alertdialog" aria-modal="true" aria-labelledby="my-dialog-title"
+                aria-describedby="my-dialog-content">
+                <div class="mdc-dialog__content" id="my-dialog-content">
+                    Er is een e-mail naar "<span id="email-address"></span>" verstuurd met instructies om uw wachtwoord te resetten.
+                </div>
+                <div class="mdc-dialog__actions">
+                    <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="cancel">
+                        <div class="mdc-button__ripple"></div>
+                        <span class="mdc-button__label">OK</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="mdc-dialog__scrim"></div>
+    </div>
+    <script src="js/forgotpass.js" async></script>
+</body>
