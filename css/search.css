@@ -1,0 +1,264 @@
+@font-face {
+    font-family: 'CharisSIL';
+    src: url('../fonts/CharisSIL.eot');
+    src: url('../fonts/CharisSIL.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/CharisSIL.woff2') format('woff2'),
+    url('../fonts/CharisSIL.woff') format('woff'),
+    url('../fonts/CharisSIL.ttf')  format('truetype'),
+    url('../fonts/CharisSIL.svg#fce281fce3710bdef0bac6e899de067e') format('svg');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'CharisSIL';
+    src: url('../fonts/CharisSIL-Bold.eot');
+    src: url('../fonts/CharisSIL-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/CharisSIL-Bold.woff2') format('woff2'),
+    url('../fonts/CharisSIL-Bold.woff') format('woff'),
+    url('../fonts/CharisSIL-Bold.ttf')  format('truetype'),
+    url('../fonts/CharisSIL-Bold.svg#fce281fce3710bdef0bac6e899de067e') format('svg');
+    font-style: normal;
+    font-weight: 700;
+}
+
+html {
+    --mdc-typography-font-family: "CharisSIL", serif;
+    --mdc-theme-primary: rgb(0, 32, 72) !important;
+    --mdc-theme-secondary: rgb(102, 121, 145) !important;
+    /* --mdc-theme-secondary: #ff4400 !important;  */
+}
+
+body {
+    background-color: #667991;
+    overflow:hidden;
+    margin: 0px;
+    z-index: 9;
+}
+
+.account-btn {
+    margin-right: 2em;
+}
+
+.login-text {
+    margin-right: 1em;
+    margin-left: auto;
+}
+
+.home-btn {
+    margin: 0 2em;
+}
+
+.mdc-top-app-bar {
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),0px 4px 5px 0px rgba(0, 0, 0, 0.14),0px 1px 10px 0px rgba(0,0,0,.12);
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+    color: rgb(0, 32, 72);
+}
+
+div.mdc-select__anchor span,
+div.mdc-select__anchor i,
+label.mdc-text-field.mdc-top-app-bar__action-item span,
+label.mdc-text-field.mdc-top-app-bar__action-item i,
+label.mdc-text-field.mdc-top-app-bar__action-item input {
+    border-color: var(--mdc-theme-on-primary, #fff) !important;
+    color: var(--mdc-theme-on-primary, #fff) !important;
+    fill: var(--mdc-theme-on-primary, #fff) !important;
+    caret-color: var(--mdc-theme-on-primary, #fff) !important;
+}
+
+.location-select,
+.onderwerp-select,
+.start-date,
+.end-date,
+.search-bar {
+    margin-right: 1em;
+}
+
+.search-bar {
+    flex: 1;
+}
+
+.start-date,
+.end-date {
+    width: 10em;
+}
+
+.header {
+    z-index: 2;
+    background-color: #fff;
+    text-align: start;
+    color: rgb(0, 32, 72);
+    display: flex;
+    align-items: center;
+}
+
+.header > h1 {
+    margin: 1rem 1rem;
+    display: inline-block;
+}
+
+.username,
+.password {
+    display: flex;
+    margin: 20px auto;
+    width: 30vw;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 30vw;
+    margin: auto;
+}
+  
+.button-container button {
+    width: 50%;
+    margin: 3px;
+}
+
+.forgot-pass {
+    width: 30vw;
+    margin: 10px auto;
+    display: flex;
+}
+
+main {
+    padding-top: calc(64px + 5em);
+    flex-direction: row;
+    display: flex;
+    height: calc(100vh - (64px + 5em));
+}
+
+.sidebar {
+    background-color: #fff;
+    padding: 10px;
+    width: 250px;
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: width 500ms;
+    flex: none;
+}
+
+.other-info {
+    width: 100%;
+}
+
+.kaart-container {
+    width: 100%;
+    margin-bottom: -6px;
+    margin-top: auto;
+    position: relative;
+}
+
+
+.nl-kaart {
+    width: 100%;
+}
+
+.img-overlay {
+    pointer-events: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index:2;
+}
+
+.show-card-btn {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index:2;
+    margin: 10px;
+}
+
+.search-main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-results {
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.search-results > .mdc-card {
+    margin-bottom: 0.5em;
+    flex-direction: row;
+}
+
+.search-results .mdc-card__actions {
+    margin-left: auto;
+}
+
+.search-filters {
+    display: flex;
+    flex-direction: row;
+    background-color:#fff;
+    padding: 0.5em;
+}
+
+.year-btn {
+    margin-right: 2em;
+}
+
+.btn-ascending, .btn-ascending.mdc-button > span {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.btn-descending, .btn-descending.mdc-button > span {
+    border-left: none;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.btn-start-comparison {
+    margin-left: 1em;
+}
+
+.mdc-card {
+    transition: transform 200ms;
+}
+
+.mdc-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 4px 2px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14),0px 2px 6px 0px rgba(0,0,0,.12);
+}
+
+.mdc-card-wrapper__text-section {
+    padding-bottom: 16px;
+}
+.mdc-card-wrapper__text-section, .mdc-card__media + .mdc-card-wrapper__text-section {
+    padding-top: 16px;
+}
+.mdc-card-wrapper__text-section {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.mdc-card__title {
+    font-size: 1.25rem;
+    line-height: 2rem;
+    font-weight: 500;
+    letter-spacing: .0125em;
+    text-decoration: inherit;
+    text-transform: inherit;
+}
+
+.mdc-card__subhead {
+    font-size: .875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    letter-spacing: .0178571429em;
+    text-decoration: inherit;
+    text-transform: inherit;
+    opacity: .6;
+}
