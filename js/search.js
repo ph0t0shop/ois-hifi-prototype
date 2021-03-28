@@ -10,6 +10,31 @@ const MDCTooltip = mdc.tooltip.MDCTooltip;
 const MDCIconButtonToggle = mdc.iconButton.MDCIconButtonToggle;
 
 
+const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
+const dialogText = document.querySelector(".mdc-dialog__content");
+const dialogTitle = document.querySelector(".mdc-dialog__title");
+
+function displayDialog(html, title) {
+    if (title) {
+        dialogTitle.innerHTML = title;
+        dialogTitle.style.height = null;
+    } else {
+        dialogTitle.innerHTML = "";
+        dialogTitle.style.height = "1em";
+    }
+    dialogText.innerHTML = html;
+    dialog.open();
+}
+
+const MDCSnackbar = mdc.snackbar.MDCSnackbar;
+const snackbar = new MDCSnackbar(document.querySelector('.mdc-snackbar'));
+const snackbarText = document.querySelector(".mdc-snackbar__label");
+
+function displaySnackbar(text) {
+    snackbarText.innerText = text;
+    snackbar.open();
+}
+
 const selector = '.mdc-card__actions .mdc-icon-button';
 const iconButtonToggles = [].map.call(document.querySelectorAll(selector), function(el) {
   return new MDCIconButtonToggle(el);
@@ -119,8 +144,6 @@ onderwerpSelect.listen('MDCSelect:change', () => {
 const topAppBarElement = document.querySelector('.mdc-top-app-bar');
 const topAppBar = new MDCTopAppBar(topAppBarElement);
 
-const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
-
 
 const searchBar = new MDCTextField(document.querySelector('.search-bar'));
 const startDate = new MDCTextField(document.querySelector('.start-date'));
@@ -203,6 +226,12 @@ sidebar.addEventListener('transitionend', () => {
     window.dispatchEvent(new Event('resize'));
 });
 
+document.querySelectorAll(".mdc-card").forEach((elem) => {
+    elem.addEventListener("click", (event) => {
+        displayDialog("Link: <a href=\"https://books.google.nl/books?id=6P1YAAAAcAAJ&pg=RA1-PT16&source=gbs_selected_pages&cad=3#v=onepage&q&f=false\">https://books.google.nl/books?id=6P1YAAAAcAAJ&pg=RA1-PT16&source=gbs_selected_pages&cad=3#v=onepage&q&f=false</a><br>Publicatiejaar: 1681<br>Locatie: Holland", "Metadata")
+    });
+});
+
 document.querySelectorAll(".location-btn").forEach((elem) => {
     elem.addEventListener("click", (event) => {
         event.stopPropagation();
@@ -216,6 +245,45 @@ document.querySelectorAll(".location-btn").forEach((elem) => {
     });
 });
 
+document.querySelectorAll(".bookmark-btn").forEach((elem) => {
+    elem.addEventListener("click", (event) => {
+        event.stopPropagation();
+        if (!localStorage.getItem("username")) {
+            displayDialog("U bent niet ingelogd. Om teksten te kunnen opslaan, moet u eerst inoggen.");
+            return;
+        }
+        if (elem.classList.contains("mdc-icon-button--on")) {
+            displaySnackbar("Toegevoegd aan mijn lijsten!");
+        } else {
+            displaySnackbar("Weggehaald uit mijn lijsten.");
+        }
+    });
+});
+
+let compareCount = 0;
+
+document.querySelectorAll(".add-compare-btn").forEach((elem) => {
+    elem.addEventListener("click", (event) => {
+        event.stopPropagation();
+        if (elem.classList.contains("mdc-icon-button--on")) {
+            compareCount++;
+            displaySnackbar("Toegevoegd aan vergelijking. Druk op \"Start vergelijking\" om te vergelijken.");
+        } else {
+            compareCount--;
+            displaySnackbar("Weggehaald uit vergelijking.");
+        }
+    });
+});
+
+document.querySelector(".btn-start-comparison").addEventListener("click", function(event) {
+    if (compareCount <= 0) {
+        displayDialog("U moet minstens één tekst selecteren om te kunnen vergelijken.");
+        return;
+    }
+    localStorage.setItem("compaeCount", compareCount);
+    window.location.href = "./compare.html";
+});
+
 const fields = [searchBar, startDate, endDate, locationSelect, onderwerpSelect];
 const keys = ["query", "startDate", "endDate", "location", "subject"];
 for (let i = 0; i < keys.length; i++) {
@@ -227,7 +295,7 @@ const searchBtn = new MDCRipple(document.querySelector(".search-btn"));
 searchBtn.root.addEventListener("click", () => {
     const values = [searchBar.value, startDate.value, endDate.value, locationSelect.value, onderwerpSelect.value];
     if (!values.some((val) => !!val)) {
-        dialog.open();
+        displayDialog("Voer minstens één zoekterm in.");
         return;
     }
     for (let i = 0; i < keys.length; i++) {
