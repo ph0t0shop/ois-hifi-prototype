@@ -280,7 +280,7 @@ document.querySelector(".btn-start-comparison").addEventListener("click", functi
         displayDialog("U moet minstens één tekst selecteren om te kunnen vergelijken.");
         return;
     }
-    localStorage.setItem("compaeCount", compareCount);
+    localStorage.setItem("compareCount", compareCount);
     window.location.href = "./compare.html";
 });
 
