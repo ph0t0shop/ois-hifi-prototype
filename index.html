@@ -17,20 +17,13 @@
                 <span class="mdc-fab__icon material-icons">home</span>
             </button>
             <h1 class="mdc-typography--headline3">Entangled Histories</h1>
+            <span class="mdc-typography mdc-typography--body1 login-text"></span>
             <button class="mdc-button mdc-menu-surface--anchor mdc-button--outlined account-btn">
                 <span class="mdc-button__ripple"></span>
                 <i class="material-icons mdc-button__icon" aria-hidden="true">account_circle</i>
                 <span class="mdc-button__label">Account</span>
-                <div class="mdc-menu mdc-menu-surface">
-                    <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
-                        <li class="mdc-list-item" role="menuitem">
-                            <span class="mdc-list-item__ripple"></span>
-                            <span class="mdc-list-item__text">Inloggen</span>
-                        </li>
-                        <li class="mdc-list-item" role="menuitem">
-                            <span class="mdc-list-item__ripple"></span>
-                            <span class="mdc-list-item__text">Aanmelden</span>
-                        </li>
+                <div class="mdc-menu account-menu mdc-menu-surface">
+                    <ul class="mdc-list account-list" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
                     </ul>
                 </div>
             </button>
@@ -195,7 +188,7 @@
             <div class="mdc-dialog__surface" role="alertdialog" aria-modal="true" aria-labelledby="my-dialog-title"
                 aria-describedby="my-dialog-content">
                 <div class="mdc-dialog__content" id="my-dialog-content">
-                    Uw gebruikersnaam of wachtwoord is incorrect.
+                    Voer minstens één zoekterm in.
                 </div>
                 <div class="mdc-dialog__actions">
                     <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="cancel">
@@ -206,6 +199,11 @@
             </div>
         </div>
         <div class="mdc-dialog__scrim"></div>
+    </div>
+    <div id="tooltip-id" class="mdc-tooltip" role="tooltip" aria-hidden="true">
+        <div class="mdc-tooltip__surface">
+          lorem ipsum dolor
+        </div>
     </div>
     <script src="js/imageMapResizer.min.js"></script>
     <script src="js/index.js" async></script>

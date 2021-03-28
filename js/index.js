@@ -5,6 +5,12 @@ const MDCDialog = mdc.dialog.MDCDialog;
 const MDCSelect = mdc.select.MDCSelect;
 const MDCTextField = mdc.textField.MDCTextField;
 
+const MDCTooltip = mdc.tooltip.MDCTooltip;
+
+// document.querySelectorAll(".mdc-tooltip").forEach((elem) => {
+//     new MDCTooltip(elem);
+// });
+
 const locationSelect = new MDCSelect(document.querySelector('.location-select'));
 const homeBtn = new MDCRipple(document.querySelector('.home-btn'));
 
@@ -22,6 +28,58 @@ for (const option of ["Antwerp (city)", "Artois", "Bergen Op Zoom", "Brabant", "
 }
 
 locationSelect.layoutOptions();
+
+
+const accountMenu = new MDCMenu(document.querySelector('.account-menu'));
+accountMenu.setAnchorCorner(mdc.menu.Corner.BOTTOM_LEFT);
+
+document.querySelector(".account-btn").addEventListener("click", function (event) {
+    if (event.target.classList.contains("mdc-list-item") || event.target.parentNode.classList.contains("mdc-list-item")) {
+    } else {
+        accountMenu.open = true;
+    }
+});
+
+const accountList = document.querySelector(".account-list");
+if (localStorage.getItem("username")) { // ingelogd
+    document.querySelector(".login-text").innerText = `Welkom terug, ${localStorage.getItem("username")}!`;
+    accountList.innerHTML += `<li class="mdc-list-item" role="menuitem" onclick="lists();">
+        <span class="mdc-list-item__ripple"></span>
+        <span class="mdc-list-item__text">Mijn lijsten</span>
+    </li>
+    <li class="mdc-list-item" role="menuitem" onclick="logout();">
+        <span class="mdc-list-item__ripple"></span>
+        <span class="mdc-list-item__text">Uitloggen</span>
+    </li>`;
+} else {
+    document.querySelector(".login-text").innerText = "U bent niet ingelogd.";
+    accountList.innerHTML += `<li class="mdc-list-item" role="menuitem" onclick="login();">
+        <span class="mdc-list-item__ripple"></span>
+        <span class="mdc-list-item__text">Inloggen</span>
+    </li>
+    <li class="mdc-list-item" role="menuitem" onclick="register();">
+        <span class="mdc-list-item__ripple"></span>
+        <span class="mdc-list-item__text">Aanmelden</span>
+    </li>`;
+}
+// accountMenu.layoutOptions();
+
+function login() {
+    window.location.href = "/login.html";
+}
+
+function logout() {
+    localStorage.removeItem("username");
+    window.location.reload();
+}
+
+function register() {
+    window.location.href = "/register.html";
+}
+
+function lists() {
+    window.location.href = "/lists.html";
+}
 
 const onderwerpSelect = new MDCSelect(document.querySelector('.onderwerp-select'));
 
@@ -47,14 +105,8 @@ onderwerpSelect.listen('MDCSelect:change', () => {
 const topAppBarElement = document.querySelector('.mdc-top-app-bar');
 const topAppBar = new MDCTopAppBar(topAppBarElement);
 
-const menu = new MDCMenu(document.querySelector('.mdc-menu'));
-menu.setAnchorCorner(mdc.menu.Corner.BOTTOM_LEFT);
-
 const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
 
-document.querySelector(".account-btn").addEventListener("click", function(event) {
-    menu.open = true;
-});
 
 const searchBar = new MDCTextField(document.querySelector('.search-bar'));
 const startDate = new MDCTextField(document.querySelector('.start-date'));
@@ -70,8 +122,7 @@ document.querySelectorAll("area").forEach((elem) => {
         res.push(elem);
         if (odd) {
             res.push(",");
-        }
-        else {
+        } else {
             res.push(" ");
         }
     }
@@ -112,4 +163,21 @@ locationSelect.listen('MDCSelect:change', () => {
         const keys = Object.keys(pathMap);
         selectedPoly.setAttribute("points", pathMap[keys[getRandomInt(keys.length)]]);
     }
+});
+
+const searchBtn = new MDCRipple(document.querySelector(".search-btn"));
+searchBtn.root.addEventListener("click", () => {
+    const values = [searchBar.value, startDate.value, endDate.value, locationSelect.value, onderwerpSelect.value];
+    if (!values.some((val) => !!val)) {
+        dialog.open();
+        return;
+    }
+    const keys = ["query", "startDate", "endDate", "location", "subject"];
+    for (let i = 0; i < keys.length; i++) {
+        const key = keys[i];
+        const value = values[i];
+        localStorage.removeItem(key);
+        if (value) localStorage.setItem(key, value);
+    }
+    window.location.href = "/search.html";
 });
