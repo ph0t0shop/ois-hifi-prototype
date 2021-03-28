@@ -157,6 +157,6 @@ const compareCount = parseInt(localStorage.getItem("compareCount"));
 if (compareCount < 3) {
     document.querySelector(".book-3").style.display = "none";
 }
-else if (compareCount == 1) {
-    // document.
+if (compareCount == 1) {
+    document.querySelectorAll(".btn-swap-transcription")[1].click();
 }

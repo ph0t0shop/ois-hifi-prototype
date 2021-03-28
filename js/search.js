@@ -306,3 +306,9 @@ searchBtn.root.addEventListener("click", () => {
     }
     window.location.href = "./search.html";
 });
+
+searchBar.root.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        searchBtn.root.click();
+    }
+});

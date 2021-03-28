@@ -109,6 +109,7 @@ const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
 
 
 const searchBar = new MDCTextField(document.querySelector('.search-bar'));
+
 const startDate = new MDCTextField(document.querySelector('.start-date'));
 const endDate = new MDCTextField(document.querySelector('.end-date'));
 const pathMap = {};
@@ -180,4 +181,10 @@ searchBtn.root.addEventListener("click", () => {
         if (value) localStorage.setItem(key, value);
     }
     window.location.href = "./search.html";
+});
+
+searchBar.root.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        searchBtn.root.click();
+    }
 });
