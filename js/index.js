@@ -65,7 +65,7 @@ if (localStorage.getItem("username")) { // ingelogd
 // accountMenu.layoutOptions();
 
 function login() {
-    window.location.href = "/login.html";
+    window.location.href = "./login.html";
 }
 
 function logout() {
@@ -74,11 +74,11 @@ function logout() {
 }
 
 function register() {
-    window.location.href = "/register.html";
+    window.location.href = "./register.html";
 }
 
 function lists() {
-    window.location.href = "/lists.html";
+    window.location.href = "./lists.html";
 }
 
 const onderwerpSelect = new MDCSelect(document.querySelector('.onderwerp-select'));
@@ -179,5 +179,5 @@ searchBtn.root.addEventListener("click", () => {
         localStorage.removeItem(key);
         if (value) localStorage.setItem(key, value);
     }
-    window.location.href = "/search.html";
+    window.location.href = "./search.html";
 });

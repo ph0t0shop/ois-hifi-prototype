@@ -17,11 +17,11 @@ document.querySelector("#toggle-pass-vis").addEventListener("click", function(el
 });
 
 document.querySelector(".home-btn").addEventListener("click", function() {
-    window.location.href = "/index.html";
+    window.location.href = "./index.html";
 });
 
 document.querySelector(".register-btn").addEventListener("click", function() {
-    window.location.href = "/register.html";
+    window.location.href = "./register.html";
 });
 
 document.querySelector(".login-btn").addEventListener("click", function(event) {
@@ -34,5 +34,5 @@ document.querySelector(".login-btn").addEventListener("click", function(event) {
 });
 
 document.querySelector(".forgot-pass").addEventListener("click", function() {
-    window.location.href = "/forgotpass.html";
+    window.location.href = "./forgotpass.html";
 });

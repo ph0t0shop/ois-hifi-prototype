@@ -7,11 +7,11 @@ const homeBtn = new MDCRipple(document.querySelector('.home-btn'));
 const email = new MDCTextField(document.querySelector('.email'));
 
 document.querySelector(".home-btn").addEventListener("click", function() {
-    window.location.href = "/index.html";
+    window.location.href = "./index.html";
 });
 
 document.querySelector(".back-btn").addEventListener("click", function() {
-    window.location.href = "/login.html";
+    window.location.href = "./login.html";
 });
 
 function forgotPass() {

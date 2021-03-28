@@ -18,15 +18,15 @@ for (const rootElem of [password, confirmPass]) {
 }
 
 document.querySelector(".home-btn").addEventListener("click", function() {
-    window.location.href = "/index.html";
+    window.location.href = "./index.html";
 });
 
 document.querySelector(".cancel").addEventListener("click", function() {
-    window.location.href = "/login.html";
+    window.location.href = "./login.html";
 });
 
 document.querySelector(".forgot-pass").addEventListener("click", function() {
-    window.location.href = "/forgotpass.html";
+    window.location.href = "./forgotpass.html";
 });
 
 
